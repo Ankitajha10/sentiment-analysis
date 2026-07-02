@@ -3,35 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentiment Analyzer</title>
+    <title>AI Sentiment Analysis</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="card">
             <h1>Sentiment Analysis</h1>
-            <p class="subtitle">AI-powered text emotion detection</p>
+            <p>Enter text below to detect its emotion.</p>
             
-            <div class="input-group">
-                <textarea id="userInput" placeholder="Example: I'm having a wonderful day and the weather is amazing!"></textarea>
-                <p id="validationMsg" class="hidden">Please enter some text.</p>
-            </div>
-
+            <textarea id="userInput" placeholder="Example: I'm having a great day!"></textarea>
+            
             <button id="analyzeBtn" onclick="analyzeSentiment()">Analyze Sentiment</button>
 
-            <!-- Loading Spinner -->
             <div id="loading" class="hidden">
                 <div class="spinner"></div>
-                <p>Processing text...</p>
+                <p>Thinking...</p>
             </div>
 
-            <!-- Result Display -->
             <div id="resultContainer" class="hidden">
-                <div id="resultCard" class="">
-                    <h2 id="sentimentLabel">POSITIVE</h2>
-                    <p>Confidence: <span id="confidenceScore">0%</span></p>
+                <div id="resultCard">
+                    <h2 id="sentimentLabel"></h2>
+                    <p>Confidence: <span id="confidenceScore"></span></p>
                 </div>
             </div>
         </div>
